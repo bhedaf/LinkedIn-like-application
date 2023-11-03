@@ -1,0 +1,43 @@
+﻿@page
+@model ContosoUniversity.Pages.WorkExps.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>WorkExp</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WorkExp.Company)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WorkExp.Company)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WorkExp.Position)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WorkExp.Position)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WorkExp.FromDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WorkExp.FromDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WorkExp.ToDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WorkExp.ToDate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.WorkExp?.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

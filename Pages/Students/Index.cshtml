@@ -1,0 +1,155 @@
+﻿@page
+@model ContosoUniversity.Pages.Students.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Profiles</h1>
+
+<!--
+<p>
+    <a asp-page="Create">Create New Profile</a>
+</p>
+-->
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Student[0].LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student[0].FirstMidName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student[0].PhoneNumber)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Student) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstMidName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+
+
+
+
+<h1>Work Experience</h1>
+
+
+<p>
+    <a asp-page="../WorkExps/Create">Create New Work Experience</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkExp[0].Company)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkExp[0].Position)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkExp[0].FromDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkExp[0].ToDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.WorkExp) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Company)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Position)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FromDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ToDate)
+            </td>
+            <td>
+                <a asp-page="../WorkExps/Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="../WorkExps/Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="../WorkExps/Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+
+
+
+
+
+
+<h1>Education</h1>
+
+<p>
+    <a asp-page="../Educations/Create">Create New Education</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Education[0].UniName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Education[0].ProgName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Education[0].PassingTime)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Education) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UniName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProgName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PassingTime)
+            </td>
+            <td>
+                <a asp-page="../Educations/Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="../Educations/Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="../Educations/Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+
+

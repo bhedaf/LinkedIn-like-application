@@ -1,0 +1,45 @@
+﻿@page
+@model ContosoUniversity.Pages.Educations.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Education</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Education.ID" />
+            <div class="form-group">
+                <label asp-for="Education.UniName" class="control-label"></label>
+                <input asp-for="Education.UniName" class="form-control" />
+                <span asp-validation-for="Education.UniName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Education.ProgName" class="control-label"></label>
+                <input asp-for="Education.ProgName" class="form-control" />
+                <span asp-validation-for="Education.ProgName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Education.PassingTime" class="control-label"></label>
+                <input asp-for="Education.PassingTime" class="form-control" />
+                <span asp-validation-for="Education.PassingTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

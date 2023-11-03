@@ -1,0 +1,37 @@
+﻿@page
+@model ContosoUniversity.Pages.Educations.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Education</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Education.UniName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Education.UniName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Education.ProgName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Education.ProgName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Education.PassingTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Education.PassingTime)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Education?.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
